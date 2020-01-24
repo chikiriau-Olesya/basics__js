@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Special site</title>
+  <style>
+  h1 {
+    max-width: 80%;
+    font-size: 9vw;
+    font-family: sant-serif;
+  }
+  #userName {
+    color: red;
+  }
+  </style>
+</head>
+<body>
+  <h1> This website was made special for u, <span id="userName"></span></h1>
+  <script>
+  let name = prompt('Как тебя зовкт?')
+  document.getElementById('userName').textcontent = name
+  console.log("Ниже результат:")
+  console.log(document.getElementById('userName'))
+  </script>
+</body>
+</html>
