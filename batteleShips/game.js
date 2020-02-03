@@ -16,6 +16,14 @@ let isSunk = false
 while (isSunk === false) {
   //Спрашиваем координату выстрела у игрока
   currentShot  = Number(prompt('ввведите число от 0 до 9:'))
+
+  //Пишем условия введения чисел
+  if(currentShot < 0) {
+    alert("Воу, слишком мало")
+  }
+  if (currentShot > 9) {
+    alert("Ту мач")
+  }
   //увеличиваю кол-во выстрелов
   //shots++
   console.log(currentShot);
@@ -25,9 +33,12 @@ while (isSunk === false) {
   //Поэтому то увеличиваю кол-во попаданий
   if (currentShot === location1 || currentShot === location2 || currentShot === location3 ){
     hits += 1
-    alert('Вы попали')
-  } else {
-    alert('Вы промахнулись')
+    alert('Вы попали');
+  } else if (сurrentShot > 9 || currentShot < 0 || currentShot === NaN) {
+    alert('Введите число правильно');
+  }
+  else {
+    alert('Вы промахнулись');
   }
   console.log(hits);
   //Если игрок попал 3 раза,топим корабль
@@ -37,6 +48,3 @@ while (isSunk === false) {
   }
 
 }
-false
-true
-true
