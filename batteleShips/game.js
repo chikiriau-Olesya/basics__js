@@ -1,7 +1,7 @@
 //Задаем координаты корабля
-let location1 = 5
-let location2 = 6
-let location3 = 7
+let location1 = Math.floor(Math.random() * 9);
+let location2 = location1 + 1;
+let location3 = location1 + 2;
 
 //Переменная чтобы хранить координату выстрела
 let currentShot
@@ -18,27 +18,34 @@ while (isSunk === false) {
   currentShot  = Number(prompt('ввведите число от 0 до 9:'))
 
   //Пишем условия введения чисел
+  /*
   if(currentShot < 0) {
     alert("Воу, слишком мало")
   }
   if (currentShot > 9) {
     alert("Ту мач")
   }
+  */
   //увеличиваю кол-во выстрелов
   //shots++
   console.log(currentShot);
-  shots += 1
   //Проверяю попал ли человек по корабл
   //Если координата совпадает с какой-либо координатой корабля , то это значит, что игрок попал
   //Поэтому то увеличиваю кол-во попаданий
-  if (currentShot === location1 || currentShot === location2 || currentShot === location3 ){
-    hits += 1
-    alert('Вы попали');
-  } else if (сurrentShot > 9 || currentShot < 0 || currentShot === NaN) {
-    alert('Введите число правильно');
-  }
-  else {
-    alert('Вы промахнулись');
+  if (currentShot < 0) {
+    alert("Воу, слишком мало")
+  } else if (currentShot > 9) {
+    alert("Ту мач")
+  } else if (currentShot === !Number) {
+    alert("What&")
+  } else {
+      shots += 1
+      if (currentShot === location1 || currentShot === location2 || currentShot === location3 ){
+      hits += 1
+      alert('Вы попали');
+    } else {
+      alert('Вы промахнулись');
+      }
   }
 
   console.log(hits);
