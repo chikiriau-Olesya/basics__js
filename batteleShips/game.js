@@ -40,6 +40,7 @@ while (isSunk === false) {
   else {
     alert('Вы промахнулись');
   }
+
   console.log(hits);
   //Если игрок попал 3 раза,топим корабль
   if (hits === 3) {
