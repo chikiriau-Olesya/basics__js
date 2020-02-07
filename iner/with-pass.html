@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>password access</title>
+</head>
+<body>
+  <h1>Secret</h1>
+  <p>
+    Add your password: <input id="passInput" type="password" />
+  </p>
+  <a href="Secret.html" onclick="return checkPass()">Press to check your password and access the secret wed-site</a>
+  <script>
+  function checkPass() {
+    let pass = document.getElementById("passInput").value
+    if (pass === "0000") {
+      return true
+    }
+    alert("Access is prohibited!")
+    return false
+  }
+  </script>
+</body>
+</html>
