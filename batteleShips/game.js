@@ -1,5 +1,5 @@
 //Задаем координаты корабля
-let location1 = Math.floor(Math.random() * 9);
+let location1 = Math.floor(Math.random() * 8);
 let location2 = location1 + 1;
 let location3 = location1 + 2;
 
@@ -36,17 +36,37 @@ while (isSunk === false) {
     alert("Воу, слишком мало")
   } else if (currentShot > 9) {
     alert("Ту мач")
-  } else if (currentShot === !Number) {
-    alert("What&")
+  } else if (currentShot !== Number) {
+    alert("What?")
   } else {
       shots += 1
       if (currentShot === location1 || currentShot === location2 || currentShot === location3 ){
       hits += 1
       alert('Вы попали');
-    } else {
+      } else {
       alert('Вы промахнулись');
       }
   }
+
+
+/*
+  if (currentShot === location1 || currentShot === location2 || currentShot === location3 ){
+  shots += 1
+  hits += 1
+  alert('Вы попали');
+  } else if (currentShot < 0) {
+    alert("Воу, слишком мало")
+  } else if (currentShot > 9) {
+    alert("Ту мач")
+  } else if (currentShot !== Number) {
+    alert("What?")
+  } else {
+      shots += 1
+      alert('Вы промахнулись');
+      }
+  }
+  */
+
 
   console.log(hits);
   //Если игрок попал 3 раза,топим корабль
