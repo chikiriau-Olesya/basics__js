@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="animation.css">
 </head>
 <body>
-  <div class="box" onclick="reset()"></div>
+  <div class="box" onclick="reset()">
+    <p id="textInput"></p>
+  </div>
 
   <button onclick="paintItBlack()">
     paint with black
@@ -21,11 +23,9 @@
    blinking
   </button>
 
-  <button id="blinking" class=" "onclick="blinking">Blinking Animation</button>
+  <input id= "myText" type="text" placeholder="Write anything">
 
-  <input id= "textInput"type="text" placeholder="Write anything">
-
-  <button onclick="addText()" id="text">
+  <button onclick="addText()">
    add tittle
   </button>
 
