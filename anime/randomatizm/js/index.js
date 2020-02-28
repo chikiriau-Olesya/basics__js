@@ -4,7 +4,6 @@ document.body.append(div) //Передаем созданныый элемнт �
 */
 let numberOfRects = 5
 
-
 for (let i = 0; i < numberOfRects; i++) {
   let div = document.createElement('div')
   if (i % 2 === 0) {
@@ -36,5 +35,50 @@ for (let i = 0; i < numberOfRects; i++) {
   }
   document.body.append(div)
 }
+let fonts = [
+'Caladea',
+'Oswald',
+'Playfair Display',
+'Poppins',
+'Raleway',
+'Source Sans Pro'
+]
 
-let word = Math.random().toString(36).slice(-10)
+/*
+for (var i = 0; i < wordNumber; i++) {
+  let word = document.createElement('p')
+  if (i % 2 == 0) {
+    word.style.fontSize = `${anime.random(0, 100)}px`
+    word.style.fontFamily = [anime.random(0,5)]
+    word.style.fontWeight = anime.random(500,700)
+  } else {
+    word.style.fontFamily = [anime.random(0,5)]
+    word.style.fontWeight = `${anime.random(0,400)}`
+  }
+  word.style.transform = `translate(${anime.random(0,100)}vw, ${anime.random(0,100)}vh) rotate(${ anime.random(0,360)}deg)`
+  word.style.color = `rgb(${anime.random(0, 255)},${anime.random(0, 255)},${anime.random(0, 255)})`
+  document.body.append(p)
+}
+*/
+
+let  wordNumber = 12
+
+for (var i = 0; i < wordNumber; i++) {
+  let p = document.createElement('p')
+  let word = Math.random().toString(36).slice(-10)
+
+  word.split('').forEach(letter => {
+    let span = document.createElement('span')
+    span.innerText = letter
+    span.style.fontFamily = fonts[anime.random(0,5)]
+    span.style.fontSize = `${anime.random(0,10)}vw`
+    span.style.color = `rgb(${anime.random(0, 255)},${anime.random(0, 255)},${anime.random(0, 255)})`
+    p.append(span)
+  })
+  // split разбивает слова  на буквы, выбираем, что необходимо убрать
+
+  p.style.fontWeight = anime.random(0,700)
+  p.style.transform = `translate(${anime.random(0,100)}vw, ${anime.random(0,100)}vh) rotate(${ anime.random(0,360)}deg)`
+
+  document.body.append(p)
+}
