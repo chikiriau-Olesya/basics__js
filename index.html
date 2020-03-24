@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+     .s {
+        background-color: blue;
+         height: 200px;
+         width: 200px;
+         position: fixed;
+     }
+     button{
+         position: fixed;
+         transform: translate(100px, 200px);
+     }
+     div {
+         background-color: red;
+         height: 100px;
+         width: 100px;
+         position: absolute;
+
+     }
+ </style>
+<body>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <button> aaaaaaa</button>
+    <script>
+        document.querySelector('button').onclick = function() {
+            let createDiv = document.createElement('div')
+            document.body.append(createDiv)
+            createDiv.classList.toggle('div')
+            var newDIv = document.querySelectorAll('.div');
+
+            for (let i = 0; i < newDIv.length; i++) {
+                const element = newDIv[i];
+                element.onmousedown = function(e) { 
+
+                
+                element.style.position = 'fixed';
+                moveAt(e);
+                
+                document.body.appendChild(element);
+
+                element.style.zIndex = 1000; 
+                function moveAt(e) {
+                element.style.left = e.pageX - element.offsetWidth / 2 + 'px';
+                element.style.top = e.pageY - element.offsetHeight / 2 + 'px';
+                }
+
+                
+                document.onmousemove = function(e) {
+                moveAt(e);
+                }
+
+                
+                element.onmouseup = function() {
+                document.onmousemove = null;
+                element.onmouseup = null;
+                }
+                }
+            }
+        }
+    
+
+    </script>
+</body>
+</html>
